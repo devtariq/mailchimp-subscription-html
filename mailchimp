@@ -14,11 +14,11 @@ https://github.com/scdoshi/jquery-ajaxchimp/blob/master/jquery.ajaxchimp.min.js
   </form>
 </div>
 
-//ACTIVATION JS
-// mailchimp start
-    if ($('.mailchimp').length > 0) {
+// mailchimp subscription
+    let mailchimp = $("#mailchimp-subscription");
+    if (mailchimp.length > 0) {
         /*  MAILCHIMP  */
-        $('.mailchimp').ajaxChimp({
+        mailchimp.ajaxChimp({
             language: 'es',
             callback: mailchimpCallback,
             url: "https://facebook.us17.list-manage.com/subscribe/post?u=e8c07b57e07350179b0d6325b&amp;id=437442d4eb" //Replace this with your own mailchimp post URL.
@@ -27,11 +27,11 @@ https://github.com/scdoshi/jquery-ajaxchimp/blob/master/jquery.ajaxchimp.min.js
 
     function mailchimpCallback(resp) {
         if (resp.result === 'success') {
-            $('.subscription-success').html('<i class="fa fa-check"></i><br/>' + resp.msg).fadeIn(1000);
+            $('.subscription-success').html('<i class="fa fa-check"></i><br/>' + resp.msg).fadeIn(1500);
             $('.subscription-error').fadeOut(500);
 
         } else if (resp.result === 'error') {
-            $('.subscription-error').html('<i class="fa fa-times"></i><br/>' + resp.msg).fadeIn(1000);
+            $('.subscription-error').html('<i class="fa fa-times"></i><br/>' + resp.msg).fadeIn(1500);
         }
     }
     $.ajaxChimp.translations.es = {

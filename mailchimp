@@ -1,21 +1,19 @@
 ADD THIS AJAX FILE BEFORE CUSTOM.JS
 https://github.com/scdoshi/jquery-ajaxchimp/blob/master/jquery.ajaxchimp.min.js
 
-
-//SUBSCRIPTION FORM HTML
-
+//Form Markup
 <div class="subs-form">
-  <form action="#" class="mailchimp">
-      <label class="subscription-label" for="subscriber-email"></label>
-      <input type="email" name="subscribe" id="subscriber-email" placeholder="Enter your Email" class="form-control">
-      <button type="submit" id="subscribe-button" class="custom-btn">Subscribe</button>
-      <h5 class="subscription-success"> </h5>
-      <h5 class="subscription-error"> </h5>
-  </form>
+    <form action="#" class="mailchimp-sform">
+        <input type="email" name="subscribe" id="subscriber-email" placeholder="Enter your Email" class="form-control">
+        <button type="submit" id="subscribe-button" class="custom-btn">Subscribe</button>
+        <span class="subscription-success"> </span>
+        <span class="subscription-error"> </span>
+        <label class="subscription-label" for="subscriber-email"></label>
+    </form>
 </div>
 
 // mailchimp subscription
-    let mailchimp = $("#mailchimp-subscription");
+    let mailchimp = $(".mailchimp-sform");
     if (mailchimp.length > 0) {
         /*  MAILCHIMP  */
         mailchimp.ajaxChimp({
